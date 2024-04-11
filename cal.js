@@ -58,12 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
             dateCell.classList.add("day-cell");
             dateCell.innerHTML = `<span class="date">${day}</span>`;
             calendarBody.appendChild(dateCell);
+            const today = new Date();
+            if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+                dateCell.classList.add("today");
+            }
         }
     }
 
-    const today = new Date();
-    if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
-        dateCell.classList.add("today");
-    }
 
 });
